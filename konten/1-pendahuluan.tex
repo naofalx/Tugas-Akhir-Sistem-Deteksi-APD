@@ -3,25 +3,42 @@
 \subsection{Latar Belakang}
 
 % Ubah paragraf-paragraf berikut sesuai dengan latar belakang dari tugas akhir
-Pesatnya perkembangan roket yang merupakan \lipsum[2]
+Alat Pelindung Diri selanjutnya disingkat APD adalah suatu alat yang mempunyai kemampuan untuk melindungi
+seseorang yang fungsinya mengisolasi sebagian atau
+seluruh tubuh dari potensi bahaya di tempat kerja.
+Penggunaan APD diatur dalam Peraturan Menteri Tenga Kerja
+dan Transmigrasi Republik Indonesia NOMOR PER.08/MEN/VII/2010
+tentang ALAT PELINDUNG DIRI \cite{suratkementriantenagakerja}.
+Secara Standar Nasional Indonesia (SNI), APD meliputi pelindung kepala, pelindung mata dan muka, pelindung telinga,
+pelindung pernapasan beserta perlengkapannya, pelindung tangan, dan pelindung kaki \cite{suratkementriantenagakerja}.
 
-\lipsum[3]
+Tetapi walaupun sudah diatur dalam peraturan pemerintah, belum menjamin semua pekerja menggunakan APD saat diinstruksikan untuk digunakan. Fakta di lapangan menunjukkan bahwa para pekerja banyak yang tidak menggunakan alat ini karena tidak merasa nyaman saat bekerja, misalkan dalam penggunaan masker dirasakan menganggu kenyamanan karena dianggap menganggu pernapasan sehingga pemakaian masih memerlukan penyesuaian diri \cite{sumamur2014}. Melalui jurnal Menakar Implementasi Kebijakan Keselamatan dan Kesehatan Kerja di Indonesia oleh Masrully pada tahun 2019, Sekretaris Umum BPD Gabungan Pelaksana Konstruksi Indonesia atau GAPENSI menyatakan bahwa menurutnya sejumlah proyek konstruksi yang digarap perusahaan BUMN sering didapati pekerja yang mengabaikan keselamatan kerja yang dimana waktu itu bahasan utamanya adalah kecelakan kerja yang marak terjadi sepanjang tahun 2017 hingga 2018 \cite{masrully2019menakar}.
 
-\subsection{Rumusan Masalah}
+Dalam penanggulangan kelalaian penggunaan APD, perusahaan-perusahaan yang mela- kukan pekerjaan pada umumnya sudah mengerahkan supervisor atau pengawas berupa petugas K3 atau Ahli K3 yang dimana juga bertugas untuk mengawasi penggunaan APD sebagai salah satu bentuk K3. Selain itu pengerahannya  ini sendiri pun juga diatur dalam PERATURAN MENTERI PEKERJAAN UMUM DAN PERUMAHAN RAKYAT NOMOR : 21/PRT/M/2019 tentang Pedoman Sistem Manajemen Keselamatan Konstruksi yang dimana menyebutkan adanya Pengawas Pekerjaan Konstruksi yang merupakan tim pendukung yang ditunjuk untuk pengawasaan pekerjaan konstruksi dan pemenuhan terhadap norma, standar, prosedur, dan kriteria \cite{permen21prtm2019pedomansistemmanajemenkeselamatankonstruksi}. Tetapi, petugas K3 yang dikerahkankan pada umumnya masih melakukan pengawasan secara manual. Disini seperti yang diketahui yaitu manusia memilki batasan tertentu dimana luas area pengawasan yang terlalu luas dan banyaknya jumlah pekerja yang harus diawasi menjadi tantangan.
+
+Dengan perkembangan teknologi yang ada, penulis ingin membuat sebuah sistem pendeteksi penggunaan Alat Pelindung Diri (APD) pada pekerja konstruksi dengan menggunakan algoritma \textit{multi object detection} yaitu YOLOv7. Algoritma ini merupakan algoritma \textit{object detection} versi pembaruan dari algoritma YOLO sebelum-sebelumnya yang berbasis \textit{Convolutional Neural Network} (CNN). Penulis berharap dengan adanya sistem pendeteksi ini akan memudahkan proses pengawasan terhadap penggunaan Alat Pelindung Diri (APD) pada pekerja di lokasi konstruksi.
+
+\subsection{Permasalahan}
 
 % Ubah paragraf berikut sesuai dengan rumusan masalah dari tugas akhir
-Berdasarkan hal yang telah dipaparkan di latar belakang, \lipsum[4]
+Berdasarkan latar belakang tersebut, dirumuskan suatu permasalahan untuk judul ini yaitu Alat Pelindung Diri (APD) K3 masih sering disepelekan ditambah pengawasan penggunaan Alat Pelindung Diri (APD) K3 yang masih dilakukan secara manual oleh supervisor atau pengawas.
 
-\subsection{Batasan Masalah atau Ruang Lingkup}
+\subsection{Batasan Masalah}
 
-\lipsum[6]
+Dalam pengerjaan judul penelitian ini terdapat beberapa batasan masalah:
+\begin{enumerate}[nolistsep]
+    \item Alat Pelindung Diri (APD) yang dideteksi terdiri dari helm keselamatan kerja 4 warna, \textit{safety glass}, dan rompi seperti pada dataset yang akan digunakan.
+    \item Metode deteksi objek yang digunakan adalah CNN (\emph{Convolutional Neural Network}) dengan menggunakan algoritma YOLOv7.
+    \item Dataset yang digunakan adalah CHVG (\textit{Color Hardhat, Vest, Glass}) dataset.
+    \item Input berasal dari \emph{webcam} atau kamera laptop.
+    \item Dengan asumsi implementasi pengawasan pada checkpoint, jarak kamera berada pada 1 meter hingga 10 meter dari yang diawasi.
+\end{enumerate}
 
 \subsection{Tujuan}
 
 % Ubah paragraf berikut sesuai dengan tujuan penelitian dari tugas akhir
-Tujuan dari penelitian ini adalah \lipsum[7][1-14]
-
+Dari rumusan masalah yang telah disebutkan, tujuan dari penelitian ini adalah untuk merancang sistem yang dapat mendeteksi penggunaan Alat Pelindung Diri (APD) pada pekerja di lokasi konstruksi yang mengurangi waktu dan biaya otoritas dan meningkatkan argumen keselamatan. Sistem dikembangkan agar bisa dijalankan secara real-time dan praktis untuk memudahkan proses pengawasan.
 \subsection{Manfaat}
 
 % Ubah paragraf berikut sesuai dengan tujuan penelitian dari tugas akhir
-Manfaat dari penelitian ini adalah \lipsum[8][1-14]
+Manfaat dari penelitian ini yaitu mempermudah proses pengawasan terhadap penggunaan alat pelindung diri (APD) oleh pekerja. Dengan adanya sistem ini juga diharapkan akan mening- katkan kedisiplinan pemakaian APD oleh pekerja konstruksi sehingga mengurangi kemungkinan cedera, sakit, maupun kematian di lokasi konstruksi jika terjadi kecelakaan kerja.

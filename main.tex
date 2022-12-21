@@ -9,10 +9,15 @@
 
 % Pengaturan caption untuk tabel
 \usepackage{caption}
+\DeclareCaptionLabelSeparator{custom}{. }
+\captionsetup
+{
+  labelsep = custom
+}
 
 % Judul dokumen
 \title{Proposal Tugas Akhir ITS}
-\author{Musk, Elon Reeve}
+\author{Nirvana, Muhammad Naofal}
 
 % Pengaturan detail pada file PDF
 \usepackage[pdfauthor={\@author},bookmarksnumbered,pdfborder={0 0 0}]{hyperref}
@@ -28,7 +33,7 @@
 % Pengaturan jenis karakter
 \usepackage[utf8]{inputenc}
 
-\usepackage[style=apa, backend=biber]{biblatex}
+\usepackage[style=ieee, backend=biber]{biblatex}
 \usepackage{enumitem} % Pembuatan list
 \usepackage{lipsum} % Pembuatan template kalimat
 \usepackage{graphicx} % Input gambar
@@ -101,79 +106,79 @@
 
 % Isi keseluruhan dokumen
 \begin{document}
-  % Nomor halaman pembuka dimulai dari sini
-  \pagenumbering{roman}
+% Nomor halaman pembuka dimulai dari sini
+\pagenumbering{roman}
 
-  % Atur ulang penomoran halaman
-  \setcounter{page}{1}
+% Atur ulang penomoran halaman
+\setcounter{page}{1}
 
-  % Sampul Bahasa Indonesia
-  \newcommand\covercontents{sampul/konten-id.tex}
-  \input{sampul/sampul-luar.tex}
+% Sampul Bahasa Indonesia
+\newcommand\covercontents{sampul/konten-id.tex}
+\input{sampul/sampul-luar.tex}
 
-  % Sampul Bahasa Inggris
-  \renewcommand\covercontents{sampul/konten-en.tex}
-  \input{sampul/sampul-luar.tex}
+% Sampul Bahasa Inggris
+\renewcommand\covercontents{sampul/konten-en.tex}
+\input{sampul/sampul-luar.tex}
 
-  % Lembar pengesahan
-  \input{lainnya/lembar-pengesahan.tex}
+% Lembar pengesahan
+\input{lainnya/lembar-pengesahan.tex}
+\newpage
+
+% Lembar pengesahan
+\input{lainnya/lembar-pengesahan-en.tex}
+\newpage
+
+% Abstrak
+\input{lainnya/abstrak.tex}
+\newpage
+
+\input{lainnya/abstrak-en.tex}
+\newpage
+
+\begin{spacing}{1.5}
+  % Daftar isi
+  \renewcommand*\contentsname{DAFTAR ISI}
+  \addcontentsline{toc}{chapter}{\contentsname}
+  \tableofcontents
   \newpage
 
-  % Lembar pengesahan
-  \input{lainnya/lembar-pengesahan-en.tex}
+  % Daftar gambar
+  \renewcommand*\listfigurename{DAFTAR GAMBAR}
+  \addcontentsline{toc}{chapter}{\listfigurename}
+  \listoffigures
   \newpage
 
-  % Abstrak
-  \input{lainnya/abstrak.tex}
+  % Daftar tabel
+  \renewcommand*\listtablename{DAFTAR TABEL}
+  \addcontentsline{toc}{chapter}{\listtablename}
+  \listoftables
   \newpage
+\end{spacing}
 
-  \input{lainnya/abstrak-en.tex}
-  \newpage
+% Nomor halaman isi dimulai dari sini
+\pagenumbering{arabic}
 
-  \begin{spacing}{1.5}
-    % Daftar isi
-    \renewcommand*\contentsname{DAFTAR ISI}
-    \addcontentsline{toc}{chapter}{\contentsname}
-    \tableofcontents
-    \newpage
+% Konten pendahuluan
+\input{konten/1-pendahuluan.tex}
 
-    % Daftar gambar
-    \renewcommand*\listfigurename{DAFTAR GAMBAR}
-    \addcontentsline{toc}{chapter}{\listfigurename}
-    \listoffigures
-    \newpage
+% Konten tinjauan pustaka
+\input{konten/2-tinjauan-pustaka.tex}
 
-    % Daftar tabel
-    \renewcommand*\listtablename{DAFTAR TABEL}
-    \addcontentsline{toc}{chapter}{\listtablename}
-    \listoftables
-    \newpage
-  \end{spacing}
+% Konten metodologi
+\input{konten/3-metodologi.tex}
 
-  % Nomor halaman isi dimulai dari sini
-  \pagenumbering{arabic}
+% Konten lainnya
+\input{konten/4-lainnya.tex}
 
-  % Konten pendahuluan
-  \input{konten/1-pendahuluan.tex}
-
-  % Konten tinjauan pustaka
-  \input{konten/2-tinjauan-pustaka.tex}
-
-  % Konten metodologi
-  \input{konten/3-metodologi.tex}
-
-  % Konten lainnya
-  \input{konten/4-lainnya.tex}
-
-  % Daftar pustaka
-  \section{DAFTAR PUSTAKA}
-  \renewcommand\refname{}
-  \vspace{2ex}
-  \renewcommand{\bibname}{}
-  \begingroup
-    \def\chapter*#1{}
-    \printbibliography
-  \endgroup
+% Daftar pustaka
+\section{DAFTAR PUSTAKA}
+\renewcommand\refname{}
+\vspace{2ex}
+\renewcommand{\bibname}{}
+\begingroup
+\def\chapter*#1{}
+\printbibliography
+\endgroup
 
 
 \end{document}
