@@ -1,12 +1,13 @@
-\section{TINJAUAN PUSTAKA}
+\chapter{TINJAUAN PUSTAKA}
 
 % Ubah konten-konten berikut sesuai dengan isi dari tinjauan pustaka
-\subsection{Hasil penelitian/perancangan terdahulu}
+\section{Hasil penelitian/perancangan terdahulu}
 
-\subsubsection{\emph{PPE detector: a YOLO-based architecture to detect personal protective equipment (PPE) for construction Sites}}
+\subsection{\emph{PPE detector: a YOLO-based architecture to detect personal protective equipment (PPE) for construction Sites}}
+
 Md. Ferdous dan Sk. Md. Masudul Ahsan pada bulan April 2022 lalu melakukan penelitian berjudul "PPE detector: a YOLO-based architecture to detect personal protective equipment (PPE) for construction Sites" dimana mereka membuat sistem pendeteksi APD otomatis berbasis Visi Komputer. Sedangkan untuk algoritma deteksi yang digunakan, penelitian ini menggunakan arsitektur \emph{anchor-free} YOLO --- yaitu YOLO versi X atau YOLOX secara spesifik. Penelitian ini menggunakan dataset bernama "CHVG Dataset" dimana CHVG merupakan kependekan dari \emph{Color Hardhat Vest Glass} yang merupakan deskripsi dari isi dari dataset itu sendiri. Dataset tersebut merupakan salah satu \emph{output} dari penelitian ini yang dibuat sendiri oleh para penulis dengan cara menambahkan dan menggabungkan data dari dataset penelitian-penelitian sebelumnya yang terkait serta sebagai pengembangan dari dataset penelitian-peneli- tian sebelumnya tersebut. Sistem deteksi yang dibuat oleh penelitian ini masih menerima \emph{input} dalam bentuk file gambar atau foto dan belum \emph{real-time} menggunakan kamera webcam yang menangkap citra video namun hasil prediksi dari model YOLOX sudah ditampilkan pada antarmuka sistem. Dari hasil pengujian yang dilakukan, didapatkan rata-rata mAP terbesarnya yaitu 89,84\% yang dihasilkan oleh model dengan jenis YOLOX-m \cite{ferdous_ahsan_2022}.
 
-\subsubsection{Rancang Sistem Pendeteksi Alat Pelindung Diri (APD) Berbasis \emph{Image Prosessing}}
+\subsection{Rancang Sistem Pendeteksi Alat Pelindung Diri (APD) Berbasis \emph{Image Prosessing}}
 
 Miftachul Ulum bersama 3 rekannya pada tahun 2021 melakukan penelitian tentang peran-
 cangan sistem pendeteksi Alat Pelindung Diri (APD) antara lain helm, kacamata, dan masker
@@ -17,9 +18,9 @@ ponen APD kacamata lebih sering tidak terdeteksi dibanding komponen APD lainnya 
 disebabkan oleh pantulan cahaya dari kacamata yang dapat mengganggu proses penangkapan gambar. Selain itu pada penelitian ini juga ditemukan bahwa kemampuan kamera dan komputer
 akan memengaruhi kinerja sistem secara keseluruhan \cite{miftachul_2021}.
 
-\subsection{Teori/Konsep Dasar}
+\section{Teori/Konsep Dasar}
 
-\subsubsection{Alat Pelindung Diri}
+\subsection{Alat Pelindung Diri}
 \label{apd}
 
 Dalam setiap pekerjaan, seorang pekerja memiliki kemungkinan mengalami kecelakaan yang mempengaruhi kondisi kesehatannya. Keselamatan dan kesehatan kerja berkaitan dengan alat kerja, proses pengolahan, dan bahan, lingkungan kerja dan proses melakukan pekerjaannya. Kecelakaan merupakan kejadian yang tidak terduga dan tidak pernah diharapkan karena dapat menimbulkan kerugian materil dan juga penderitaan mulai dari penderitaan yang ringan sampai dengan penderitaan yang paling berat \cite{anizar2012}.
@@ -34,9 +35,7 @@ Penggunaan APD diatur dalam Peraturan Menteri Tenga Kerja
 dan Transmigrasi Republik Indonesia NOMOR PER.08/MEN/VII/2010
 tentang ALAT PELINDUNG DIRI (dan Transmigrasi Republik Indonesia, 2010a) \cite{suratkementriantenagakerja}.
 
-\newpage
-
-\subsubsection{Peraturan Menteri Tenaga Kerja dan Transmigrasi Republik Indonesia tentang Alat Pelindung Diri}
+\subsection{Peraturan Menteri Tenaga Kerja dan Transmigrasi Republik Indonesia tentang Alat Pelindung Diri}
 \label{peraturanapd}
 
 Peraturan Menteri Tenaga Kerja dan Transmigrasi (Kemnakertrans) Republik Indonesia NOMOR PER.08/MEN/VII/2010 mengatur tentang alat pelindung diri.
@@ -53,13 +52,13 @@ yaitu :
   \item pelindung kaki
 \end{enumerate}
 
-\subsubsection{Peraturan Menteri Pekerjaan Umum dan Perumahan Rakyat tentang Pedoman Sistem Manajemen Keselamatan Konstruksi}
+\subsection{Peraturan Menteri Pekerjaan Umum dan Perumahan Rakyat tentang Pedoman Sistem Manajemen Keselamatan Konstruksi}
 \label{sec:permenpu_smkk}
 
 \par Peraturan Menteri Pekerjaan Umum dan Perumahan Rakyat NOMOR : 21/PRT/M/2019 mengatur Pedoman Sistem Manajemen Keselamatan Konstruksi.
 Petaturan ini meliputi ketentuan umum untuk SMKK (Sistem Manajemen Keselamatan Konstruksi), Konseptual SMKK, elemen SMKK, penerapan, penyedia jasa, pelaksanaan pekerjaan konstruksi,  dan beberapa aturan lainnya yang menyinggung ketentuan Kesehatan Keselamatan Kerja (K3) pada konstruksi. Pada pasal 1 untuk ketentuan umum dimana pada ayat ke 10 menyebutkan adanya Pengawas Pekerjaan Konstruksi yang merupakan tim pendukung yang ditunjuk oleh Pengguna Jasa yang bertanggung jawab pada pengawasan Pekerjaan Konstruksi dan pemenuhan terhadap norma, standar, prosedur, dan kriteria \cite{permen21prtm2019pedomansistemmanajemenkeselamatankonstruksi}.
 
-\subsubsection{Visi Komputer}
+\subsection{Visi Komputer}
 \label{sec:visikomputer}
 
 \par Manusia bisa dengan mudahnya memahami struktur tiga dimensi yang ada di sekitarnya. Kita dapat mengetahui bahwa
@@ -78,15 +77,13 @@ permasalah visi komputer ini yaitu antaralain dengan penyelesaian secara fisika 
 bentuk, pencahayaan, dan pewarnaan. Manusia dapat dengan mudahnya memahami detail - detail tersebut sedangkan algoritma visi komputer
 akan sering mengalami \emph{error} \cite{margaret2008mind}.
 
-\newpage
-
 \par Visi Komputer adalah bidang ilmu yang mempelajari cara untuk memproses gambar teru- tama dalam meniru
 kemampuan manusia dalam melihat. Kemampuan seperti rekognisi wajah hingga bentuk kemampuan lain yang bahkan
 melebihi kemampuan manusia. Kebanyakan riset dari bidang visi komputer di \emph{deep learning} berfokus pada
 pengenalan objek atau deteksi. Bentuknya dari pengenalan atau deteksi ini bisa meliputi membuat log atau laporan
 objek apa saja yang ada dalam gambar hingga memberi penandaan pada objek yang terdeteksi \cite{Goodfellow-et-al-2016}.
 
-\subsubsection{\emph{Object Detection}}
+\subsection{\emph{Object Detection}}
 \label{sec:objectdetection}
 
 \par Untuk dapat memahami konsep deteksi objek, selain menyelesaikan klasifikasi kelas dari objek yang diamati, kita juga harus dapat
@@ -114,7 +111,7 @@ proses ekstraksi fitur nya dilakukan pada \emph{neural network}-nya juga yang ak
 \par Klasifikasi berguna untuk mengenali objek yang ada pada gambar dengan kategori - kategori. Juga sudah terdapat beberapa metode
 klasifkasi yang biasa digunakan seperti \emph{Supported Vector Machine}, AdaBoost, dan \emph{Deformable Part-based Model} \cite{zhao2019object}.
 
-\subsubsection{\emph{Convolutional Neural Network} (CNN)}
+\subsection{\emph{Convolutional Neural Network} (CNN)}
 \label{sec:convolutionalneuralnetwork}
 
 \par \emph{Convolutional Neural Network} adalah metode deep learning yang didesain untuk rekognisi pada data dua
@@ -126,7 +123,7 @@ terpisah atau independen \cite{putra2016klasifikasi}. \emph{Convolutional Neural
 sekadar memiliki banyak \emph{layer} seperti konsep \emph{deep learning} tetapi juga meniru bagaimaimana cara otak manusia mengenali sebuah gambar \cite{kim2017convolutional}. Pada arsitektur CNN, terdapat beberapa jenis layer yaitu \emph{Convolution Layer, Subsampling Layer,
   Fully Connected Layer}, dan \emph{Activation Layer}.
 
-\subsubsection{\emph{You Only Look Once} (YOLO)}
+\subsection{\emph{You Only Look Once} (YOLO)}
 \label{sec:youonlylookone}
 
 \emph{You Only Look Once} atau YOLO adalah algoritma \emph{multi object detection} yang sangat cepat yang dicetuskan oleh Redmot et al pada tahun 2015 lewat buku mereka \emph{You Only Look Once: Unified, Real-Time Object Detection} \cite{redmon2016you}. \emph{Convolutional Neural Network} menjadi basis dari sistem deteksi YOLO ini. YOLO melakukan deteksi objek dengan menganggap nya sebagai permasalahan regresi tunggal yang diambil langsung dari \emph{pixel - pixel} yang ada di gambar menjadi \emph{bounding box} penanda dari koordinat - koordinat dan probabilitas dari klasifikasinya. Dengan begitu hanya perlu dilakukan satu kali pengecekan pada gambar untuk melakukan deteksi atau indentifikasi \cite{redmon2016you}. YOLO menggabungkan beberapa komponen dari teksi objek menjadi satu neural network yang dimana menggunakan fitu-fitur dari seluruh bagian gambar untuk memprediksi tiap \emph{bounding box} sekaligus melakukan prediksi untuk semua \emph{bounding box} di semua tipe klasifikasi yang ada. Desain dari YOLO ini memungkinkan untuk melakukan \emph{end to end training} dan kecepatan deteksi \emph{real time}.
@@ -146,7 +143,7 @@ sekadar memiliki banyak \emph{layer} seperti konsep \emph{deep learning} tetapi 
 
 \par Terdapat lima nilai prediksi yang ada pada tiap bounding box yaitu : x, y, w, h, dan \emph{confidence}. X dan Y mewakili pusat dari bounding box. W dan H mewakili \emph{Weight} dan \emph{Height} diprediksi relatif dari seluruh gambar. Lalu \emph{confidence score} sendiri mewakili IOU antara \emph{predicted box} dan \emph{ground truth box} \cite{redmon2016you}.
 
-\subsubsection{YOLOv7}
+\subsection{YOLOv7}
 \label{subsec:yolov7}
 
 \par YOLOv7 adalah YOLO resmi versi terbaru yang dibuat oleh penulis asli arsitektur YOLO, melebihi semua versi YOLO sebelumnya dan model deteksi objek lainnya dalam hal kecepatan dan akurasi \cite{wang2022yolov7}. YOLOv7 meningkatkan kecepatan dan akurasi dengan memperkenalkan beberapa reformasi arsitektur. Mirip dengan \textit{Scaled} YOLOv4, YOLOv7 tidak menggunakan \textit{backbone pretrained} ImageNet. Sebaliknya, model dilatih menggunakan dataset COCO sepenuhnya. Kesamaan bisa diekspektasi karena YOLOv7 ditulis oleh penulis yang sama dari \textit{Scaled} YOLOv4 \cite{yolov7explain}.

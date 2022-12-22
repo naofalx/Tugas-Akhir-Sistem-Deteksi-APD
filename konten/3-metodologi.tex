@@ -1,9 +1,8 @@
-
-\section{METODOLOGI}
+\chapter{METODOLOGI}
 
 % Ubah konten-konten berikut sesuai dengan isi dari metodologi
 
-\subsection{Desain Sistem}
+\section{Desain Sistem}
 \label{sec:desainsistem}
 
 Judul untuk tugas akhir “Sistem Pendeteksi Penggunaan Alat Pelindung Diri (APD) Pada Pekerja Konstruksi” ini berada dalam bidang computer vision atau visi komputer yang memiliki tujuan merancang sistem yang dapat mendeteksi penggunaan Alat Pelindung Diri (APD) secara real-time. Menggunakan YOLOv7 yang merupakan algoritma deteksi objek yang berbasis CNN (Convolutional Neural Network). Dataset yang digunakan berupa gambar-gambar personel proyek yang mengenakan Alat Pelindung Diri (APD) dan yang tidak. Gambar - gambar tersebut dikumpulkan dari beberapa sumber seperti dataset dari penelitian sebelumnya dan sumber lainnya.
@@ -17,12 +16,12 @@ Judul untuk tugas akhir “Sistem Pendeteksi Penggunaan Alat Pelindung Diri (APD
 
 \newpage
 
-\subsection{Akuisisi Dataset}
+\section{Akuisisi Dataset}
 \label{sec:akuisisidataset}
 
-Dataset yang digunakan untuk training menggunakan Yolov7 berupa dataset berisi gambar - gambar yang mengandung personel lapangan proyek yang mengenakan Alat Pelindung Diri (APD) dan yang tidak mengenakan APD. Untuk penelitian ini, dataset yang digunakan bersumber dari:
+Dataset yang digunakan untuk training menggunakan YOLOv7 berupa dataset berisi gambar - gambar yang mengandung personel lapangan proyek yang mengenakan Alat Pelindung Diri (APD) dan yang tidak mengenakan APD. Untuk penelitian ini, dataset yang digunakan bersumber dari:
 
-\subsubsection{CHVG Dataset oleh Md. Ferdous dan Sk. Md. Masudul Ahsan}
+\subsection{CHVG Dataset oleh Md. Ferdous dan Sk. Md. Masudul Ahsan}
 \label{chvgdataset}
 
 \par Dataset ini merupakan dataset yang dibuat dan digunakan pada penelitian oleh Md. Ferdous dan Sk. Md. Masudul Ahsan pada bulan Juni tahun 2022 tentang sistem pendeteksi APD.
@@ -38,18 +37,23 @@ Dataset ini berisi 1.699 gambar dengan ukuran 640x640 dan anotasi yang sesuai da
   \label{fig:datasetapdpreview}
 \end{figure}
 
-\subsection{\textit{Preprocessing} Dataset}
+\subsection{Roboflow Universe Open Source Dataset}
+\label{roboflowdataset}
+
+Penulis mengambil 2 macam dataset dari platform Roboflow Universe yaitu "Gloves Data- set" dan "Boots Dataset". Kedua dataset tersebut merupakan dataset yang disediakan secara open source oleh platform Roboflow yang dapat digunakan secara umum karena sifatnya yang \emph{open source}. Sesuai namanya, kedua dataset tersebut berisi gambar sarung tangan dan sepatu keselamatan kerja yang sesuai dengan ketentuan APD. Dataset ini memiliki 3 kelas yaitu glove, safety boot, dan worker yang sudah dianotasikan dengan sesuai. Dataset ini memiliki total 894 gambar dengan resolusi 1920x1080 \cite{gloves-7zhos_dataset} \cite{boots-uzihq_dataset}.
+
+\section{\textit{Preprocessing} Dataset}
 \label{sec:preprocessing}
 \par Ada beberapa proses yang dilakukan untuk dataset yang sudah dikumpulkan agar bisa digunakan untuk proses training dengan benar. Proses tersebut meliputi membersihkan dataset, augmentasi gambar, dan pembagian dataset. Untuk penelitian ini, proses - proses tersebut akan dilakukan pada platform Roboflow.
 
-\subsection{Training dan Testing Model YOLOv7}
+\section{Training dan Testing Model YOLOv7}
 \label{sec:trainingdataset}
 
 \par Dataset - dataset yang sudah di pre-process sebelumnya di roboflow dan sudah memiliki anotasi yang sesuai lalu digunakan untuk training model menggunakan algoritma YOLOv7. Training ini merupakan proses pelatihan model dengan input gambar - gambar dari dataset yang sudah diberi anotasi dimana gambar dan anotasinya tersebut diolah hingga menghasilkan suatu karakteristik atau pola khusus dari kelas/label yang ditentukan sebelumnya lewat anotasi sehingga selanjutnya dapat digunakan komputer untuk menebak gambar yang nantinya dideteksi. Karena YOLOv7 yang menggunakan PyTorch sebagai framework machine learningnya, hasil training nya berupa bobot atau weight yang akan diexport dalam bentuk .pt (format pytorch).
 
 \par Hasil training model YOLOv7 tersebut kemudian dilakukan testing dengan cara melakukan proses \textit{inference} dimana input gambar yang digunakan merupakan gambar-gambar dari dataset itu sendiri yang sebelumnya digunakan untuk proses training.
 
-\subsection{Pengembangan Sistem}
+\section{Pengembangan Sistem}
 \label{sec:pengembangansistem}
 
 Sistem deteksi Alat Pelindung Diri (APD) ini akan memanfaatkan YOLOv7 untuk melaku- kan prediksi pada input yang diterima. Input berupa gambar yang diterima dari
@@ -60,22 +64,22 @@ terdapat seseorang yang tidak menggunakan Alat Pelindung Diri (APD) secara lengk
 Sistem akan dibuat dalam bentuk file script python yang dapat dijalankan pada device komputer atau laptop. Script ini akan menerima beberapa parameter input yang dibutuhkan untuk menjalankan prediksi dengan model YOLOv7. Parameter input yang dibutuhkan yaitu salah satunya input feed camera dari webcam yang digunakan atau bisa dalam bentuk file gambar atau video.
 Selain itu user akan harus memberikan parameter-parameter lain secara manual yang dibutuhkan model YOLOv7 agar dapat bisa menjalankan prediksi. Setelah semua parameter telah dipenuhi, sistem akan memberikan output berupa \textit{bounding box} yang meng-\textit{highlight} komponen-komponen APD yang ada pada gambar.
 
-\subsection{Integrasi Sistem dengan Hasil Training Model}
+\section{Integrasi Sistem dengan Hasil Training Model}
 \label{subsec:integrasi}
 
 Sistem deteksi yang sudah dikembangkan akan diintegrasikan dengan model YOLOv7 yang sudah dilakukan training dan testing menggunakan CHVG dataset. Setelah diintegrasikan, sistem akan siap untuk diimplementasikan secara real-time dengan memanfaatkan input dari kamera webcam.
 
-\subsection{Implementasi}
+\section{Implementasi}
 \label{subsec:implementasi}
 
 Sistem deteksi yang sudah dilakukan integrasi selanjutnya akan diimplementasikan dimana sistem digunakan pada kondisi \textit{real-time}. Kamera webcam akan diarahkan kepada orang yang menggunakan maupun tidak menggunakan Alat Pelindung Diri (APD). Proses ini dilakukan berulang kali dengan beberapa variabel yang berbeda contohnya seperti kondisi gelap, berkabut, dan hujan.
 
-\subsection{Evaluasi}
+\section{Evaluasi}
 \label{subsec:evaluasi}
 
 Setelah sistem deteksi diimplementasikan secara \emph{real-time} dengan beberapa variabel yang berbeda, dilakukan analisa hasil sebagai evaluasi sistem dan penelitian secara kesuluruhan. Setiap hasil dari variabel-variabel yang diuji akan dibandingkan untuk setiap jenis percobaan.
 
-\subsection{Bahan dan peralatan yang digunakan}
+\section{Bahan dan peralatan yang digunakan}
 \label{subsec:peralatan}
 
 Dalam penelitian ini, bahan dan peralatan yang akan digunakan dalam rangka menyelesaikan penelitian ini mulai dari tools berupa software atau perangkat lunak hingga hardware atau perangkat keras. Berikut pemaparan dari alat-alat yang digunakan.
@@ -118,9 +122,7 @@ Dalam penelitian ini, bahan dan peralatan yang akan digunakan dalam rangka menye
   \hline
 \end{longtable}
 
-\newpage
-
-\subsection{Urutan pelaksanaan penelitian}
+\section{Urutan pelaksanaan penelitian}
 
 Alur waktu penelitian yang akan dilaksanakan akan mengacu pada tabel yang ditunjukkan pada Tabel~\ref{tb:timeline}.
 

@@ -1,6 +1,6 @@
-\section{PENDAHULUAN}
+\chapter{PENDAHULUAN}
 
-\subsection{Latar Belakang}
+\section{Latar Belakang}
 
 % Ubah paragraf-paragraf berikut sesuai dengan latar belakang dari tugas akhir
 Alat Pelindung Diri selanjutnya disingkat APD adalah suatu alat yang mempunyai kemampuan untuk melindungi
@@ -18,27 +18,30 @@ Dalam penanggulangan kelalaian penggunaan APD, perusahaan-perusahaan yang mela- 
 
 Dengan perkembangan teknologi yang ada, penulis ingin membuat sebuah sistem pendeteksi penggunaan Alat Pelindung Diri (APD) pada pekerja konstruksi dengan menggunakan algoritma \textit{multi object detection} yaitu YOLOv7. Algoritma ini merupakan algoritma \textit{object detection} versi pembaruan dari algoritma YOLO sebelum-sebelumnya yang berbasis \textit{Convolutional Neural Network} (CNN). Penulis berharap dengan adanya sistem pendeteksi ini akan memudahkan proses pengawasan terhadap penggunaan Alat Pelindung Diri (APD) pada pekerja di lokasi konstruksi.
 
-\subsection{Permasalahan}
+\newpage
+
+\section{Permasalahan}
 
 % Ubah paragraf berikut sesuai dengan rumusan masalah dari tugas akhir
 Berdasarkan latar belakang tersebut, dirumuskan suatu permasalahan untuk judul ini yaitu Alat Pelindung Diri (APD) K3 masih sering disepelekan ditambah pengawasan penggunaan Alat Pelindung Diri (APD) K3 yang masih dilakukan secara manual oleh supervisor atau pengawas.
 
-\subsection{Batasan Masalah}
+\section{Batasan Masalah}
 
 Dalam pengerjaan judul penelitian ini terdapat beberapa batasan masalah:
 \begin{enumerate}[nolistsep]
-    \item Alat Pelindung Diri (APD) yang dideteksi terdiri dari helm keselamatan kerja 4 warna, \textit{safety glass}, dan rompi seperti pada dataset yang akan digunakan.
+    \item Alat Pelindung Diri (APD) yang dideteksi terdiri dari helm keselamatan kerja 4 warna, \textit{safety glass}, rompi, sarung tangan, dan sepatu seperti pada dataset yang akan digunakan.
     \item Metode deteksi objek yang digunakan adalah CNN (\emph{Convolutional Neural Network}) dengan menggunakan algoritma YOLOv7.
-    \item Dataset yang digunakan adalah CHVG (\textit{Color Hardhat, Vest, Glass}) dataset.
+    \item Dataset yang digunakan adalah penggabungan dari CHVG (\textit{Color Hardhat, Vest, Glass}) dataset dengan gloves dan boots dataset dari roboflow.
     \item Input berasal dari \emph{webcam} atau kamera laptop.
     \item Dengan asumsi implementasi pengawasan pada checkpoint, jarak kamera berada pada 1 meter hingga 10 meter dari yang diawasi.
 \end{enumerate}
 
-\subsection{Tujuan}
+\section{Tujuan}
 
 % Ubah paragraf berikut sesuai dengan tujuan penelitian dari tugas akhir
 Dari rumusan masalah yang telah disebutkan, tujuan dari penelitian ini adalah untuk merancang sistem yang dapat mendeteksi penggunaan Alat Pelindung Diri (APD) pada pekerja di lokasi konstruksi yang mengurangi waktu dan biaya otoritas dan meningkatkan argumen keselamatan. Sistem dikembangkan agar bisa dijalankan secara real-time dan praktis untuk memudahkan proses pengawasan.
-\subsection{Manfaat}
+
+\section{Manfaat}
 
 % Ubah paragraf berikut sesuai dengan tujuan penelitian dari tugas akhir
 Manfaat dari penelitian ini yaitu mempermudah proses pengawasan terhadap penggunaan alat pelindung diri (APD) oleh pekerja. Dengan adanya sistem ini juga diharapkan akan mening- katkan kedisiplinan pemakaian APD oleh pekerja konstruksi sehingga mengurangi kemungkinan cedera, sakit, maupun kematian di lokasi konstruksi jika terjadi kecelakaan kerja.
