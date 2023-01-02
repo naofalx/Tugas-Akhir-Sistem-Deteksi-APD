@@ -37,16 +37,16 @@ Dataset ini berisi 1.699 gambar dengan ukuran 640x640 dan anotasi yang sesuai da
   \label{fig:datasetapdpreview}
 \end{figure}
 
-\subsection{Roboflow Universe Open Source Dataset}
+\subsection{Roboflow Universe \emph{Open Source} Dataset}
 \label{roboflowdataset}
 
-Penulis mengambil 2 macam dataset dari platform Roboflow Universe yaitu "Gloves Data- set" dan "Boots Dataset". Kedua dataset tersebut merupakan dataset yang disediakan secara open source oleh platform Roboflow yang dapat digunakan secara umum karena sifatnya yang \emph{open source}. Sesuai namanya, kedua dataset tersebut berisi gambar sarung tangan dan sepatu keselamatan kerja yang sesuai dengan ketentuan APD. Dataset ini memiliki 3 kelas yaitu glove, safety boot, dan worker yang sudah dianotasikan dengan sesuai. Dataset ini memiliki total 894 gambar dengan resolusi 1920x1080 \cite{gloves-7zhos_dataset} \cite{boots-uzihq_dataset}.
+Penulis mengambil 2 macam dataset dari platform Roboflow Universe yaitu "Gloves Data- set" dan "Boots Dataset". Kedua dataset tersebut merupakan dataset yang disediakan secara \emph{open source} oleh platform Roboflow yang dapat digunakan secara umum karena sifatnya yang \emph{open source}. Sesuai namanya, kedua dataset tersebut berisi gambar sarung tangan dan sepatu keselamatan kerja yang sesuai dengan ketentuan APD. Dataset ini memiliki 3 kelas yaitu glove, safety boot, dan worker yang sudah dianotasikan dengan sesuai. Dataset ini memiliki total 894 gambar dengan resolusi 1920x1080 \cite{gloves-7zhos_dataset} \cite{boots-uzihq_dataset}.
 
 \section{\textit{Preprocessing} Dataset}
 \label{sec:preprocessing}
 \par Ada beberapa proses yang dilakukan untuk dataset yang sudah dikumpulkan agar bisa digunakan untuk proses training dengan benar. Proses tersebut meliputi membersihkan dataset, augmentasi gambar, dan pembagian dataset. Untuk penelitian ini, proses - proses tersebut akan dilakukan pada platform Roboflow.
 
-\section{Training dan Testing Model YOLOv7}
+\section{\emph{Training} dan \emph{Testing} Model YOLOv7}
 \label{sec:trainingdataset}
 
 \par Dataset - dataset yang sudah di pre-process sebelumnya di roboflow dan sudah memiliki anotasi yang sesuai lalu digunakan untuk training model menggunakan algoritma YOLOv7. Training ini merupakan proses pelatihan model dengan input gambar - gambar dari dataset yang sudah diberi anotasi dimana gambar dan anotasinya tersebut diolah hingga menghasilkan suatu karakteristik atau pola khusus dari kelas/label yang ditentukan sebelumnya lewat anotasi sehingga selanjutnya dapat digunakan komputer untuk menebak gambar yang nantinya dideteksi. Karena YOLOv7 yang menggunakan PyTorch sebagai framework machine learningnya, hasil training nya berupa bobot atau weight yang akan diexport dalam bentuk .pt (format pytorch).
@@ -59,15 +59,15 @@ Penulis mengambil 2 macam dataset dari platform Roboflow Universe yaitu "Gloves 
 Sistem deteksi Alat Pelindung Diri (APD) ini akan memanfaatkan YOLOv7 untuk melaku- kan prediksi pada input yang diterima. Input berupa gambar yang diterima dari
 webcam atau camera yang terhubung ke komputer yang akan menjalankan sistem ini.
 Sistem dikembangkan dengan tujuan untuk mendeteksi penggunaan Alat Pelindung Diri (APD) secara real-time dan akan menjalankan mekanisme alarm jika pada camera input
-terdapat seseorang yang tidak menggunakan Alat Pelindung Diri (APD) secara lengkap. Dalam hal ini yaitu menggunakan helm, kacamata, dan rompi.
+terdapat seseorang yang tidak menggunakan Alat Pelindung Diri (APD) secara lengkap. Dalam hal ini yaitu menggunakan helm, kacamata, dan rompi, sarung tangan, dan sepatu.
 
 Sistem akan dibuat dalam bentuk file script python yang dapat dijalankan pada device komputer atau laptop. Script ini akan menerima beberapa parameter input yang dibutuhkan untuk menjalankan prediksi dengan model YOLOv7. Parameter input yang dibutuhkan yaitu salah satunya input feed camera dari webcam yang digunakan atau bisa dalam bentuk file gambar atau video.
 Selain itu user akan harus memberikan parameter-parameter lain secara manual yang dibutuhkan model YOLOv7 agar dapat bisa menjalankan prediksi. Setelah semua parameter telah dipenuhi, sistem akan memberikan output berupa \textit{bounding box} yang meng-\textit{highlight} komponen-komponen APD yang ada pada gambar.
 
-\section{Integrasi Sistem dengan Hasil Training Model}
+\section{Integrasi Sistem dengan Hasil \emph{Training} Model}
 \label{subsec:integrasi}
 
-Sistem deteksi yang sudah dikembangkan akan diintegrasikan dengan model YOLOv7 yang sudah dilakukan training dan testing menggunakan CHVG dataset. Setelah diintegrasikan, sistem akan siap untuk diimplementasikan secara real-time dengan memanfaatkan input dari kamera webcam.
+Sistem deteksi yang sudah dikembangkan akan diintegrasikan dengan model YOLOv7 yang sudah dilakukan training dan testing menggunakan dataset pada penelitian ini. Setelah diintegrasikan, sistem akan siap untuk diimplementasikan secara real-time dengan memanfaatkan input dari kamera webcam.
 
 \section{Implementasi}
 \label{subsec:implementasi}
