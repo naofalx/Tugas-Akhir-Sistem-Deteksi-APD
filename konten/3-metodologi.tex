@@ -44,7 +44,9 @@ Penulis mengambil 2 macam dataset dari platform Roboflow Universe yaitu "Gloves 
 
 \section{\textit{Preprocessing} Dataset}
 \label{sec:preprocessing}
-\par Ada beberapa proses yang dilakukan untuk dataset yang sudah dikumpulkan agar bisa digunakan untuk proses training dengan benar. Proses tersebut meliputi membersihkan dataset, augmentasi gambar, dan pembagian dataset. Untuk penelitian ini, proses - proses tersebut akan dilakukan pada platform Roboflow.
+\par Ada beberapa proses yang dilakukan untuk dataset yang sudah dikumpulkan agar bisa digunakan untuk proses training dengan benar. Proses tersebut meliputi membersihkan dataset, anotasi ulang dataset, augmentasi gambar, dan pembagian dataset. Untuk penelitian ini, proses - proses tersebut akan dilakukan pada platform Roboflow.
+
+\par Pembersihan dataset dilakukan dengan menghapus gambar-gambar yang kurang relevan pada dataset yang akan digunakan. Kemudian anotasi ulang juga dilakukan dengan alasan dataset yang akan digunakan dalam proses \emph{training} dan \emph{testing} merupakan gabungan dari 3 dataset sehingga anotasi ulang diperlukan agar semua anotasi sesuai dan universal. Lalu augmentasi gambar merupakan proses memodifikasi satu gambar menjadi beberapa gambar dengan karakteristik yang berbeda seperti memberikan perubahan orientasi, kecerahan, penerangan, rotasi, dan \emph{noise}. Kemudian dataset akan dibagi menjadi 3 set untuk meningkatkan akurasi model dalam proses \emph{training} dengan rasio 80\% \emph{training set}, 10\% \emph{validation set}, dan 10\% \emph{test set}. Pembagian dataset dengan rasio tersebut disesuaikan dengan penelitian yang dilakukan oleh M. Ferdous dan S. M. Ahsan yang melakukan pembagian dataset dengan rasio yang sama.
 
 \section{\emph{Training} dan \emph{Testing} Model YOLOv7}
 \label{sec:trainingdataset}
@@ -68,6 +70,8 @@ Selain itu user akan harus memberikan parameter-parameter lain secara manual yan
 \label{subsec:integrasi}
 
 Sistem deteksi yang sudah dikembangkan akan diintegrasikan dengan model YOLOv7 yang sudah dilakukan training dan testing menggunakan dataset pada penelitian ini. Setelah diintegrasikan, sistem akan siap untuk diimplementasikan secara real-time dengan memanfaatkan input dari kamera webcam.
+
+\newpage
 
 \section{Implementasi}
 \label{subsec:implementasi}
@@ -121,6 +125,8 @@ Dalam penelitian ini, bahan dan peralatan yang akan digunakan dalam rangka menye
                 & 3 Level Lighting Adjustable Ring Light \\
   \hline
 \end{longtable}
+
+\newpage
 
 \section{Urutan pelaksanaan penelitian}
 
