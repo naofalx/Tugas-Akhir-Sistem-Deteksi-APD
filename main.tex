@@ -1,5 +1,5 @@
 % Pengaturan ukuran teks dan bentuk halaman dua sisi
-\documentclass[12pt]{report}
+\documentclass[12pt, twoside]{report}
 
 % Pengaturan ukuran halaman dan margin
 \usepackage[a4paper,top=30mm,left=30mm,right=20mm,bottom=25mm]{geometry}
@@ -120,6 +120,7 @@
 % Lembar pengesahan
 \input{lainnya/lembar-pengesahan.tex}
 \newpage
+\cleardoublepage
 
 % Lembar pengesahan
 % \input{lainnya/lembar-pengesahan-en.tex}
@@ -128,9 +129,11 @@
 % Abstrak
 \input{lainnya/abstrak.tex}
 \newpage
+\cleardoublepage
 
 \input{lainnya/abstrak-en.tex}
 \newpage
+\cleardoublepage
 
 \begin{spacing}{1.5}
   % Daftar isi
@@ -138,18 +141,21 @@
   \addcontentsline{toc}{chapter}{\contentsname}
   \tableofcontents
   \newpage
+  \cleardoublepage
 
   % Daftar gambar
   \renewcommand*\listfigurename{DAFTAR GAMBAR}
   \addcontentsline{toc}{chapter}{\listfigurename}
   \listoffigures
   \newpage
+  \cleardoublepage
 
   % Daftar tabel
   \renewcommand*\listtablename{DAFTAR TABEL}
   \addcontentsline{toc}{chapter}{\listtablename}
   \listoftables
   \newpage
+  \cleardoublepage
 \end{spacing}
 
 % Nomor halaman isi dimulai dari sini
@@ -157,15 +163,22 @@
 
 % Konten pendahuluan
 \input{konten/1-pendahuluan.tex}
+\newpage
+\cleardoublepage
 
 % Konten tinjauan pustaka
 \input{konten/2-tinjauan-pustaka.tex}
+\cleardoublepage
 
 % Konten metodologi
 \input{konten/3-metodologi.tex}
+\newpage
+\cleardoublepage
 
 % Konten lainnya
 \input{konten/4-lainnya.tex}
+\newpage
+\cleardoublepage
 
 % Daftar pustaka
 \chapter*{DAFTAR PUSTAKA}
